@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>rr", ":wincmd r<CR>")
 
 -- Save and quit current file quicker
 vim.keymap.set("n", "<leader>w", ":w<cr>", { silent = false, noremap = true })
--- vim.keymap.set({ "n", "t" }, "<leader>q", ":q<cr>", { silent = false, noremap = true })
+vim.keymap.set({ "n", "t" }, "<leader>q", ":q<cr>", { silent = false, noremap = true })
 
 -- Little one from Primeagen to mass replace string in a file
 vim.keymap.set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { silent = false })
@@ -46,12 +46,23 @@ vim.keymap.set("n", "<leader>Y", '"+Y')
 
 -- Open buffer to the right
 vim.keymap.set("n", "<leader>v", ":vsplit<CR>")
+vim.keymap.set("n", "<leader>h", ":split<CR>")
 
 -- Move selection up and down
 vim.keymap.set("v", "<C-Down>", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "<C-Up>", ":m '<-2<CR>gv=gv")
 
+-- Move Lines
+vim.keymap.set({ "n", "x" }, "<M-S-Up>", ":move -2<cr>", { desc = "Move Line Up" })
+vim.keymap.set({ "n", "x" }, "<M-S-Down>", ":move +1<cr>", { desc = "Move Line Down" })
+vim.keymap.set("i", "<M-S-Up>", "<C-o>:move -2<cr>", { desc = "Move Line Up" })
+vim.keymap.set("i", "<M-S-Down>", "<C-o>:move +1<cr>", { desc = "Move Line Down" })
+
 vim.keymap.set("n", "<leader>config", function()
 	vim.cmd(":e ~/.config/nvim/init.lua")
 	vim.cmd(":Oil")
 end)
+
+-- comment string
+vim.keymap.set("n", "ä", ":norm gcc<CR>j", { desc = "comment string" })
+vim.keymap.set("n", "°", ":norm gcc<CR>j", { desc = "comment string" })

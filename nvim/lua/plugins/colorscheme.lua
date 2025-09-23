@@ -1,3 +1,10 @@
+-- ================================================================================================
+-- TITLE : rose-pine colorscheme
+-- LINKS :
+--   > github : https://github.com/rose-pine/neovim
+-- ABOUT : a colorscheme for neovim
+-- ================================================================================================
+
 return {
 	{
 		"rose-pine/neovim",

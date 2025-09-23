@@ -1,3 +1,10 @@
+-- ================================================================================================
+-- TITLE blink.cmp
+-- LINKS :
+--   > github : https://github.com/Saghen/blink.cmp
+-- ABOUT : Performant, batteries-included completion plugin for Neovim
+-- ================================================================================================
+
 return {
 	{
 		"Saghen/blink.cmp",

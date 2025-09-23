@@ -1,3 +1,11 @@
+-- ================================================================================================
+-- TITLE : oil.nvim
+-- LINKS :
+--   > github : https://github.com/stevearc/oil.nvim
+-- ABOUT : A vim-vinegar like file explorer that lets you edit your filesystem
+--         like a normal Neovim buffer.
+-- ================================================================================================
+
 return {
 	{
 		"stevearc/oil.nvim",

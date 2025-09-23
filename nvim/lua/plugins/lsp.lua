@@ -1,8 +1,14 @@
+-- ================================================================================================
+-- TITLE : nvim-lspconfig
+-- LINKS :
+--   > github : https://github.com/neovim/nvim-lspconfig
+-- ABOUT : nvim-lspconfig is a collection of LSP server configurations for the Nvim LSP client.
+-- ================================================================================================
+
 return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-
 			vim.lsp.config("lua_ls", {
 				settings = {
 					Lua = {

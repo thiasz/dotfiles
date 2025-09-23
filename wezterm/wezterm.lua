@@ -48,10 +48,13 @@ config.color_schemes = {
 }
 
 config.color_scheme = "Custom Tokyo Night"
-config.font = wezterm.font("MesloLGS NF", { weight = "Regular" })
-config.font_size = 16 -- normal
--- config.leader = { key = "s", mods = "CTRL" }
+-- config.color_scheme = "Gruvbox Material (Gogh)"
 
+config.font = wezterm.font("Hack Nerd Font", { weight = "Regular" })
+config.font_size = 16
+config.send_composed_key_when_left_alt_is_pressed = true
+
+-- config.leader = { key = "s", mods = "CTRL" }
 config.keys = {
 	{
 		mods = "CMD",
@@ -138,8 +141,7 @@ config.inactive_pane_hsb = {
 	brightness = 1,
 }
 
+-- config.window_decorations = "RESIZE"
 config.window_decorations = "TITLE | RESIZE"
-
-config.send_composed_key_when_left_alt_is_pressed = true
 
 return config

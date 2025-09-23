@@ -43,7 +43,6 @@ vim.keymap.set("n", "<leader>p", '"_dP')
 vim.keymap.set("n", "<leader>y", '"+y')
 vim.keymap.set("v", "<leader>y", '"+y')
 vim.keymap.set("n", "<leader>Y", '"+Y')
-vim.keymap.set("n", "<C-y>", ":%y+<CR>")
 
 -- Open buffer to the right
 vim.keymap.set("n", "<leader>v", ":vsplit<CR>")

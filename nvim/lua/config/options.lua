@@ -69,3 +69,14 @@ vim.opt.winborder = "rounded"
 
 -- Diagnosics inline
 vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({ virtual_lines = false })
+vim.diagnostic.config({ underline = true })
+
+--fix robot and resource comment string
+vim.api.nvim_create_autocmd("FileType", {
+	group = vim.api.nvim_create_augroup("FixRobotCommentString", { clear = true }),
+	callback = function(ev)
+		vim.bo[ev.buf].commentstring = "# %s"
+	end,
+	pattern = { "robot", "resource" },
+})

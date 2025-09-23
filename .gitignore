@@ -1,0 +1,14 @@
+Dockerfile
+.idea
+.mypy_cache/
+.pylint.d/
+*.fxs
+tmp/
+**/logs
+**/results
+**/.DS_Store
+**/__pycache__
+**/log.html
+**/output.xml
+**/report.html
+**/DEBUG.html

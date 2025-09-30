@@ -3,14 +3,12 @@
 -- LINKS :
 --   > github : https://github.com/stevearc/conform.nvim
 -- ABOUT : Lightweight yet powerful formatter plugin for Neovim
--- ================================================================================================
--- ================================================================================================
+--
 -- TITLE : nvim-autopairs
 -- LINKS :
 --   > github : https://github.com/windwp/nvim-autopairs
 -- ABOUT : A super powerful autopair plugin for Neovim that supports multiple characters.
--- ================================================================================================
--- ================================================================================================
+--
 -- TITLE : nvim-ts-autotag
 -- LINKS :
 --   > github : https://github.com/windwp/nvim-ts-autotag
@@ -22,11 +20,15 @@ return {
 		"stevearc/conform.nvim",
 		opts = {
 			format_on_save = {
-				timeout_ms = 500,
+				timeout_ms = 3000,
 				lsp_format = "fallback",
 			},
 			formatters_by_ft = {
+				json = { "prettier" },
 				lua = { "stylua" },
+				python = { "isort", "black" },
+				xml = { "xmlformatter" },
+				yaml = { "prettier" },
 			},
 		},
 	},

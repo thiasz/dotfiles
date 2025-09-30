@@ -1,6 +1,6 @@
 #!/bin/bash
 # Autoinstallationsscript for BREW packages
-# 2024-12-05 (ma)
+# 2025-09-28 (ma)
 echo "Installation of CLIs and Applikationens with Homebrew"
 # lsp
 brew install lua-language-server

@@ -1,8 +1,8 @@
 -- ================================================================================================
--- TITLE : rose-pine colorscheme
+-- TITLE : colorscheme rose-pine
 -- LINKS :
 --   > github : https://github.com/rose-pine/neovim
--- ABOUT : a colorscheme for neovim
+-- ABOUT : All natural pine, faux fur and a bit of soho vibes for the classy minimalist
 -- ================================================================================================
 
 return {
@@ -10,6 +10,8 @@ return {
 		"rose-pine/neovim",
 		name = "rose-pine",
 		opts = {
+			variant = "moon",
+			-- variant = "main", -- default
 			styles = {
 				bold = false,
 				italic = true,

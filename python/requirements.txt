@@ -1,0 +1,12 @@
+flake8
+jsonschema
+jsonschema-specifications
+lxml
+pyang
+pykeepass
+PyYAML
+requests
+robotframework
+robotframework-jsonlibrary
+robotframework-keepasslibrary
+setuptools

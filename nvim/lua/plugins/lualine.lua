@@ -11,8 +11,8 @@ return {
 		opts = {
 			options = {
 				component_separators = { "|" },
-				icons_enabled = true,
-				section_separators = { "|" },
+				icons_enable = true,
+				sections_separators = { "|" },
 			},
 			sections = {
 				lualine_a = { "mode" },

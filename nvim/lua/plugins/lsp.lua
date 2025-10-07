@@ -19,6 +19,8 @@ return {
 			require("mason-lspconfig").setup()
 			require("mason-tool-installer").setup({
 				ensure_installed = {
+					"black",
+					"isort",
 					"stylua",
 					-- "prettierd",
 					-- "eslint-lsp",
@@ -139,14 +141,14 @@ return {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(ev)
 					local opts = { buffer = ev.buf }
-					vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-					vim.keymap.set("n", "<leader><space>", vim.lsp.buf.hover, opts)
-					vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-					vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
-					vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-					vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+					-- vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+					-- vim.keymap.set("n", "<leader><space>", vim.lsp.buf.hover, opts)
+					-- vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+					-- vim.keymap.set("n", "<leader>td", vim.lsp.buf.type_definition, opts)
+					-- vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+					-- vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 
-					vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+					-- vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
 					vim.keymap.set("n", "<leader>fu", function()
 						vim.lsp.buf.format({ timeout_ms = 10000 })
 					end)

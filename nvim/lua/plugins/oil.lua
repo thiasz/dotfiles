@@ -14,8 +14,9 @@ return {
 			{ "-", "<cmd>Oil<cr>" },
 		},
 		dependencies = {
-			"refractalize/oil-git-status.nvim",
 			"nvim-mini/mini.icons",
+			-- "nvim-tree/nvim-web-devicons",
+			"refractalize/oil-git-status.nvim",
 		},
 		opts = {
 			win_options = {
@@ -28,7 +29,7 @@ return {
 		config = function(_, opts)
 			require("mini.icons").setup()
 			require("mini.icons").mock_nvim_web_devicons()
-
+			-- require("nvim-web-devicons").setup()
 			require("oil").setup(opts)
 			require("oil-git-status").setup({
 				show_ignored = false,

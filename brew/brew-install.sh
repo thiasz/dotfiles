@@ -12,10 +12,10 @@ brew install pylint
 brew install ruff
 brew install flake8
 # formatter
-brew install black
-brew install isort
-brew install prettier
-brew install stylua
+# brew install black
+# brew install isort
+# brew install prettier
+# brew install stylua
 # others
 brew install fzf
 brew install git

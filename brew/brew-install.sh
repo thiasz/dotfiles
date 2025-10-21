@@ -23,6 +23,7 @@ brew install luarocks
 brew install neovim
 brew install openjdk
 brew install plantuml
+# brew install poetry
 brew install ripgrep
 brew install tree-sitter
 brew install tree-sitter-cli

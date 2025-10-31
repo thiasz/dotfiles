@@ -9,8 +9,8 @@ return {
 	"ibhagwan/fzf-lua",
 	lazy = false,
 	-- optional for icon support
-	-- dependencies = { "nvim-tree/nvim-web-devicons" },
-	dependencies = { "nvim-mini/mini.icons" },
+	dependencies = { "nvim-tree/nvim-web-devicons" },
+	-- dependencies = { "nvim-mini/mini.icons" },
 	opts = {
 		fzf_colors = true,
 		fzf_opts = {
@@ -45,12 +45,12 @@ return {
 		{
 			"<leader>fg",
 			function()
-				require("fzf-lua").live_grep()
+				require("fzf-lua").lgrep_curbuf()
 			end,
 			desc = "grep in files in the current directory",
 		},
 		{
-			"<leader>fb",
+			"<leader>l",
 			function()
 				require("fzf-lua").buffers()
 			end,
@@ -64,7 +64,7 @@ return {
 			desc = "GIT status",
 		},
 		{
-			"<leader>gfc",
+			"<leader>gbc",
 			function()
 				require("fzf-lua").git_bcommits()
 			end,

@@ -23,6 +23,7 @@ zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light mfaerevaag/wd
 
 # load completions
 autoload -U compinit && compinit

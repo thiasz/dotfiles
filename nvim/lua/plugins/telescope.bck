@@ -9,11 +9,11 @@ return {
 			"nvim-telescope/telescope-fzf-native.nvim",
 		},
 		keys = {
-			{ "<leader>ff", "<cmd>Telescope find_files<cr>" },
-			{ "<leader>fg", "<cmd>Telescope live_grep<cr>" },
-			{ "<leader>fh", "<cmd>Telescope help_tags<cr>" },
-			{ "<leader>fr", "<cmd>Telescope oldfiles<cr>" },
-			{ "<leader>fb", "<cmd>Telescope buffers<cr>" },
+			{ "<leader>sf", "<cmd>Telescope find_files<cr>" },
+			{ "<leader>sg", "<cmd>Telescope live_grep<cr>" },
+			{ "<leader>sh", "<cmd>Telescope help_tags<cr>" },
+			{ "<leader>sr", "<cmd>Telescope oldfiles<cr>" },
+			{ "<leader>b", "<cmd>Telescope buffers<cr>" },
 		},
 		config = function()
 			local bottom_pane_config = {

@@ -26,7 +26,8 @@ return {
 			formatters_by_ft = {
 				json = { "prettier" },
 				lua = { "stylua" },
-				python = { "isort", "black" },
+				-- python = { "isort", "black" },
+				python = { "ruff" },
 				xml = { "xmlformatter" },
 				yaml = { "prettier" },
 			},

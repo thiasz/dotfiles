@@ -5,6 +5,7 @@ lxml
 pyang
 pykeepass
 PyYAML
+netmiko
 requests
 robotframework
 robotframework-jsonlibrary

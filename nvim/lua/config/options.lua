@@ -68,7 +68,7 @@ vim.opt.smartcase = true
 vim.opt.winborder = "rounded"
 
 -- Diagnosics inline
-vim.diagnostic.config({ virtual_text = true })
+vim.diagnostic.config({ virtual_text = false })
 vim.diagnostic.config({ virtual_lines = false })
 vim.diagnostic.config({ underline = true })
 

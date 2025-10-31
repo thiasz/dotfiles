@@ -45,9 +45,16 @@ return {
 		{
 			"<leader>fg",
 			function()
-				require("fzf-lua").lgrep_curbuf()
+				require("fzf-lua").live_grep()
 			end,
 			desc = "grep in files in the current directory",
+		},
+		{
+			"<leader>fl",
+			function()
+				require("fzf-lua").lgrep_curbuf()
+			end,
+			desc = "grep in current buffer",
 		},
 		{
 			"<leader>l",

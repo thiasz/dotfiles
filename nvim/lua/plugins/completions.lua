@@ -26,7 +26,7 @@ return {
 			},
 			completion = {
 				menu = {
-					auto_show = false,
+					auto_show = true,
 					draw = {
 						treesitter = { "lsp" },
 						columns = { { "kind_icon", "label", "label_description", gap = 1 }, { "kind" } },

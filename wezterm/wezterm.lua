@@ -51,7 +51,7 @@ config.color_scheme = "Custom Tokyo Night"
 -- config.color_scheme = "Gruvbox Material (Gogh)"
 
 config.font = wezterm.font("Hack Nerd Font", { weight = "Regular" })
-config.font_size = 16
+config.font_size = 20
 config.send_composed_key_when_left_alt_is_pressed = true
 
 -- config.leader = { key = "s", mods = "CTRL" }
@@ -110,6 +110,11 @@ config.keys = {
 		action = wezterm.action.PaneSelect({
 			mode = "SwapWithActive",
 		}),
+	},
+	{
+		mods = "CMD",
+		key = "m",
+		action = wezterm.action.DisableDefaultAssignment,
 	},
 }
 

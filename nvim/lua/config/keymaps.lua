@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>rr", ":wincmd r<CR>")
 
 -- Save and quit current file quicker
 vim.keymap.set("n", "<leader>w", ":w<cr>", { silent = false, noremap = true })
-vim.keymap.set({ "n", "t" }, "<leader>q", ":q<cr>", { silent = false, noremap = true })
+-- vim.keymap.set({ "n", "t" }, "<leader>q", ":q<cr>", { silent = false, noremap = true })
 
 -- Little one from Primeagen to mass replace string in a file
 vim.keymap.set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { silent = false })
@@ -27,6 +27,10 @@ vim.keymap.set("n", "<S-Left>", ":bprevious<CR>", { silent = false })
 
 -- Close currently active buffer
 vim.keymap.set("n", "<C-c>", ":bwipeout<CR>", { silent = false })
+
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Center buffer when navigating up and down
 vim.keymap.set("n", "<S-Up>", "<C-u>zz")

@@ -36,6 +36,13 @@ return {
 	},
 	keys = {
 		{
+			"<leader>fq",
+			function()
+				require("fzf-lua").quickfix()
+			end,
+			desc = "open quickfix list",
+		},
+		{
 			"<leader>ff",
 			function()
 				require("fzf-lua").files()
@@ -43,14 +50,14 @@ return {
 			desc = "find files in the current directory",
 		},
 		{
-			"<leader>fg",
+			"<leader>fl",
 			function()
 				require("fzf-lua").live_grep()
 			end,
 			desc = "grep in files in the current directory",
 		},
 		{
-			"<leader>fl",
+			"<leader>fg",
 			function()
 				require("fzf-lua").lgrep_curbuf()
 			end,

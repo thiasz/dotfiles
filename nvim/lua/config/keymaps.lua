@@ -12,7 +12,7 @@ vim.keymap.set("n", "<C-Left>", ":wincmd h<CR>")
 vim.keymap.set("n", "<C-Down>", ":wincmd j<CR>")
 vim.keymap.set("n", "<C-Up>", ":wincmd k<CR>")
 vim.keymap.set("n", "<C-Right>", ":wincmd l<CR>")
-vim.keymap.set("n", "<leader>rr", ":wincmd r<CR>")
+-- vim.keymap.set("n", "<leader>rr", ":wincmd r<CR>")
 
 -- Save and quit current file quicker
 vim.keymap.set("n", "<leader>w", ":w<cr>", { silent = false, noremap = true })
@@ -68,5 +68,4 @@ vim.keymap.set("n", "<leader>config", function()
 end)
 
 -- comment string
-vim.keymap.set("n", "ä", ":norm gcc<CR>j", { desc = "comment string" })
-vim.keymap.set("n", "°", ":norm gcc<CR>j", { desc = "comment string" })
+vim.keymap.set("n", "§", ":norm gcc<CR>j", { desc = "comment string" })

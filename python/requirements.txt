@@ -1,13 +1,14 @@
-flake8
 jsonschema
 jsonschema-specifications
 lxml
+netmiko
 pyang
 pykeepass
+pyright
 PyYAML
-netmiko
 requests
 robotframework
 robotframework-jsonlibrary
 robotframework-keepasslibrary
+robotframework-lsp
 setuptools

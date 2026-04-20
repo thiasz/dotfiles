@@ -1,14 +1,9 @@
-jsonschema
-jsonschema-specifications
 lxml
-netmiko
 pyang
 pykeepass
-pyright
 PyYAML
 requests
 robotframework
 robotframework-jsonlibrary
 robotframework-keepasslibrary
 robotframework-lsp
-setuptools

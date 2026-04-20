@@ -7,22 +7,28 @@ alias ll='ls -lhtr *.log --color'
 alias lt='ls -lhtr --color'
 alias nl='nslookup'
 alias v='nvim'
-alias vj='so;nvim ~/temp/test.json'
+alias vx='so312;nvim ~/temp/test.json'
 alias pi='ping'
 alias py='python3'
 alias ro='robot'
 alias roa='robot -A'
+alias so311="source ~/venv311/bin/activate"
+alias so312="source ~/venv312/bin/activate"
+alias so313="source ~/venv313/bin/activate"
+alias dea="deactivate"
 alias t4='tail -n 60'
 alias tf='tail -f'
 # SPECIALS
 alias brewup='~/git/dotfiles/brew/brewup.sh'
 alias plum='java -jar /opt/homebrew/Cellar/plantuml/1.2026.2/libexec/plantuml.jar'
+alias tedo='docker run -e ANTORA_PLAYBOOK=local.yml -u $(id -u) -v "/$PWD:/antora:Z" --rm -it techdoc-docker-release-local.bahnhub.tech.rz.db.de/techdoc:3.8.4 build'
 # GIT
 alias gaa='git add .'
 alias gb='git branch'
 alias gba='git branch --all'
 alias gbd='git branch --delete'
 alias gcb='git checkout -b'
+alias gcm='git checkout main'
 alias gco='git checkout'
 alias gc!='git commit -v --amend'
 alias gcn!='git commit -v --no-edit --amend'

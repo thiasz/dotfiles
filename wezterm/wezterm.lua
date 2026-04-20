@@ -51,68 +51,69 @@ config.color_scheme = "Custom Tokyo Night"
 -- config.color_scheme = "Gruvbox Material (Gogh)"
 
 config.font = wezterm.font("Hack Nerd Font", { weight = "Regular" })
-config.font_size = 20
+config.font_size = 18
 config.send_composed_key_when_left_alt_is_pressed = true
-
+config.window_close_confirmation = "NeverPrompt"
 -- config.leader = { key = "s", mods = "CTRL" }
 config.keys = {
 	{
-		mods = "CMD",
-		key = "e",
+		--mods = "CMD|SHIFT",
+		mods = "ALT",
+		key = "v",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
-		mods = "CMD",
-		key = "o",
+		mods = "ALT",
+		key = "h",
 		action = wezterm.action.SplitPane({
 			direction = "Down",
-			size = { Percent = 20 },
+			size = { Percent = 40 },
 		}),
 	},
 	{
-		mods = "CMD",
+		mods = "ALT",
 		key = "t",
 		action = wezterm.action.SpawnTab("CurrentPaneDomain"),
 	},
 	{
-		mods = "CMD",
+		mods = "ALT",
 		key = "w",
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
 	{
-		mods = "CMD",
+		mods = "ALT",
 		key = "LeftArrow",
 		action = wezterm.action.ActivatePaneDirection("Left"),
 	},
 	{
-		mods = "CMD",
+		mods = "ALT",
 		key = "RightArrow",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
-		mods = "CMD",
+		mods = "ALT",
 		key = "DownArrow",
 		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 	{
-		mods = "CMD",
+		mods = "ALT",
 		key = "UpArrow",
 		action = wezterm.action.ActivatePaneDirection("Up"),
 	},
 	{
-		mods = "CMD",
+		mods = "ALT",
 		key = "z",
 		action = wezterm.action.TogglePaneZoomState,
 	},
 	{
-		mods = "CMD",
+		mods = "ALT",
 		key = "s",
 		action = wezterm.action.PaneSelect({
 			mode = "SwapWithActive",
 		}),
 	},
 	{
-		mods = "CMD",
+		mods = "ALT",
 		key = "m",
 		action = wezterm.action.DisableDefaultAssignment,
 	},
@@ -122,7 +123,7 @@ for i = 1, 5 do
 	-- leader + number to activate that tab
 	table.insert(config.keys, {
 		key = tostring(i),
-		mods = "CMD",
+		mods = "ALT",
 		-- minus 1 as tab starts at 0
 		action = wezterm.action.ActivateTab(i - 1),
 	})

@@ -51,7 +51,7 @@ config.color_scheme = "Custom Tokyo Night"
 -- config.color_scheme = "Gruvbox Material (Gogh)"
 
 config.font = wezterm.font("Hack Nerd Font", { weight = "Regular" })
-config.font_size = 18
+config.font_size = 16
 config.send_composed_key_when_left_alt_is_pressed = true
 config.window_close_confirmation = "NeverPrompt"
 -- config.leader = { key = "s", mods = "CTRL" }
@@ -107,20 +107,29 @@ config.keys = {
 	},
 	{
 		mods = "ALT",
-		key = "s",
+		key = "p",
 		action = wezterm.action.PaneSelect({
 			mode = "SwapWithActive",
 		}),
 	},
+	-- {
+	-- 	mods = "ALT",
+	-- 	key = "m",
+	-- 	action = wezterm.action.DisableDefaultAssignment,
+	-- },
 	{
-		mods = "ALT",
-		key = "m",
-		action = wezterm.action.DisableDefaultAssignment,
+		key = "V",
+		mods = "CTRL",
+		action = wezterm.action.PasteFrom("Clipboard"),
+	},
+	{
+		key = "V",
+		mods = "CTRL",
+		action = wezterm.action.PasteFrom("PrimarySelection"),
 	},
 }
 
 for i = 1, 5 do
-	-- leader + number to activate that tab
 	table.insert(config.keys, {
 		key = tostring(i),
 		mods = "ALT",
@@ -149,5 +158,6 @@ config.inactive_pane_hsb = {
 
 -- config.window_decorations = "RESIZE"
 config.window_decorations = "TITLE | RESIZE"
+config.adjust_window_size_when_changing_font_size = false
 
 return config

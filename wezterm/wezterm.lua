@@ -4,67 +4,68 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
-local custom = wezterm.color.get_builtin_schemes()["Tokyo Night"]
-custom.background = "#090B10"
-custom.tab_bar.background = "#090B10"
-custom.tab_bar.inactive_tab.bg_color = "#090B10"
-custom.tab_bar.new_tab.bg_color = "#090B10"
-
-custom.foreground = "#cdcdcd"
-
-custom.cursor_bg = "#cdcdcd"
-custom.cursor_fg = "#141415"
-custom.cursor_border = "#cdcdcd"
-
-custom.selection_fg = "#cdcdcd"
-custom.selection_bg = "#252530"
-
-custom.scrollbar_thumb = "#252530"
-custom.split = "#252530"
-
-custom.ansi = {
-	"#252530",
-	"#d8647e",
-	"#7fa563",
-	"#f3be7c",
-	"#6e94b2",
-	"#bb9dbd",
-	"#aeaed1",
-	"#cdcdcd",
-}
-custom.brights = {
-	"#606079",
-	"#e08398",
-	"#99b782",
-	"#f5cb96",
-	"#8ba9c1",
-	"#c9b1ca",
-	"#bebeda",
-	"#d7d7d7",
-}
-
-config.color_schemes = {
-	["Custom Tokyo Night"] = custom,
-}
-
-config.color_scheme = "Custom Tokyo Night"
--- config.color_scheme = "Gruvbox Material (Gogh)"
+-- local custom = wezterm.color.get_builtin_schemes()["Tokyo Night"]
+-- custom.background = "#090B10"
+-- custom.tab_bar.background = "#090B10"
+-- custom.tab_bar.inactive_tab.bg_color = "#090B10"
+-- custom.tab_bar.new_tab.bg_color = "#090B10"
+--
+-- custom.foreground = "#cdcdcd"
+--
+-- custom.cursor_bg = "#cdcdcd"
+-- custom.cursor_fg = "#141415"
+-- custom.cursor_border = "#cdcdcd"
+--
+-- custom.selection_fg = "#cdcdcd"
+-- custom.selection_bg = "#252530"
+--
+-- custom.scrollbar_thumb = "#252530"
+-- custom.split = "#252530"
+--
+-- custom.ansi = {
+-- 	"#252530",
+-- 	"#d8647e",
+-- 	"#7fa563",
+-- 	"#f3be7c",
+-- 	"#6e94b2",
+-- 	"#bb9dbd",
+-- 	"#aeaed1",
+-- 	"#cdcdcd",
+-- }
+-- custom.brights = {
+-- 	"#606079",
+-- 	"#e08398",
+-- 	"#99b782",
+-- 	"#f5cb96",
+-- 	"#8ba9c1",
+-- 	"#c9b1ca",
+-- 	"#bebeda",
+-- 	"#d7d7d7",
+-- }
+--
+-- config.color_schemes = {
+-- 	["Custom Tokyo Night"] = custom,
+-- }
+--
+-- config.color_scheme = "Custom Tokyo Night"
+config.color_scheme = "rose-pine-moon"
 
 config.font = wezterm.font("Hack Nerd Font", { weight = "Regular" })
 config.font_size = 16
 config.send_composed_key_when_left_alt_is_pressed = true
 config.window_close_confirmation = "NeverPrompt"
 -- config.leader = { key = "s", mods = "CTRL" }
+-- config.use_ime = false
 config.keys = {
 	{
 		--mods = "CMD|SHIFT",
 		mods = "ALT",
-		key = "v",
+		key = "o",
 		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		mods = "ALT",
-		key = "h",
+		key = "u",
 		action = wezterm.action.SplitPane({
 			direction = "Down",
 			size = { Percent = 40 },
@@ -102,7 +103,7 @@ config.keys = {
 	},
 	{
 		mods = "ALT",
-		key = "z",
+		key = "m",
 		action = wezterm.action.TogglePaneZoomState,
 	},
 	{
@@ -112,28 +113,36 @@ config.keys = {
 			mode = "SwapWithActive",
 		}),
 	},
-	-- {
-	-- 	mods = "ALT",
-	-- 	key = "m",
-	-- 	action = wezterm.action.DisableDefaultAssignment,
-	-- },
+	-- paste from the clipboard
 	{
 		key = "V",
 		mods = "CTRL",
 		action = wezterm.action.PasteFrom("Clipboard"),
 	},
+	-- paste from the primary selection
 	{
 		key = "V",
 		mods = "CTRL",
 		action = wezterm.action.PasteFrom("PrimarySelection"),
 	},
+	-- fix hyper key working
+	-- {
+	-- 	key = "n",
+	-- 	mods = "SHIFT|ALT|CTRL|SUPER",
+	-- 	action = wezterm.action.DisableDefaultAssignment,
+	-- },
 }
 
 for i = 1, 5 do
+	-- leader + number to activate that tab
+	table.insert(config.keys, {
+		key = tostring(i),
+		mods = "CMD",
+		action = wezterm.action.ActivateTab(i - 1),
+	})
 	table.insert(config.keys, {
 		key = tostring(i),
 		mods = "ALT",
-		-- minus 1 as tab starts at 0
 		action = wezterm.action.ActivateTab(i - 1),
 	})
 end

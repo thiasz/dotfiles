@@ -48,7 +48,8 @@ local config = wezterm.config_builder()
 -- }
 --
 -- config.color_scheme = "Custom Tokyo Night"
-config.color_scheme = "rose-pine-moon"
+-- config.color_scheme = "rose-pine"
+config.color_scheme = "Earthsong"
 
 config.font = wezterm.font("Hack Nerd Font", { weight = "Regular" })
 config.font_size = 16

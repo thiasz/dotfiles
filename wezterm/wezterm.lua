@@ -49,6 +49,13 @@ local config = wezterm.config_builder()
 --
 -- config.color_scheme = "Custom Tokyo Night"
 -- config.color_scheme = "rose-pine"
+-- config.color_scheme = "Railscasts (dark) (terminal.sexy)"
+-- config.color_scheme = "Red Planet"
+-- config.color_scheme = "Tartan (terminal.sexy)"
+-- config.color_scheme = "Trim Yer Beard (terminal.sexy)"
+-- config.color_scheme = "Broadcast"
+-- config.color_scheme = "Chameleon (Gogh)"
+-- config.color_scheme = "Darkside"
 config.color_scheme = "Earthsong"
 
 config.font = wezterm.font("Hack Nerd Font", { weight = "Regular" })
@@ -126,12 +133,12 @@ config.keys = {
 		mods = "CTRL",
 		action = wezterm.action.PasteFrom("PrimarySelection"),
 	},
-	-- fix hyper key working
-	-- {
-	-- 	key = "n",
-	-- 	mods = "SHIFT|ALT|CTRL|SUPER",
-	-- 	action = wezterm.action.DisableDefaultAssignment,
-	-- },
+	-- disable default assignment
+	{
+		key = "q",
+		mods = "SHIFT|CTRL",
+		action = wezterm.action.DisableDefaultAssignment,
+	},
 }
 
 for i = 1, 5 do

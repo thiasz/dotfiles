@@ -1,28 +1,56 @@
-# COMMON
+# ls
+alias l='ls'
+alias ll='ls -lhtr'
+alias la='ls -lha'
+# Better ls
+# alias l='eza --icons'
+# alias ll='eza -lh --icons --git'
+# alias la='eza -lah --icons --git'
+# alias tree='eza --tree --icons'
+
+# Reuse ls completions for eza (avoids defining a separate completion function)
+# compdef eza=ls
+
+# Better cat
+# alias cat='bat'
+
+# =========================================================
+# Core utilities
+# =========================================================
+
 alias cls='clear && printf "\033[3J"'
-alias gr='grep -i'
-alias l='ls -lh --color'
-alias la='ls -lha --color'
-alias ll='ls -lhtr *.log --color'
-alias lt='ls -lhtr --color'
-alias nl='nslookup'
-alias v='nvim'
-alias vx='so312;nvim ~/temp/test.json'
+alias diff='diff --color=auto'
+alias df='df -h'
+alias grep='rg --color=auto'
+# alias nl='nslookup'
 alias pi='ping'
 alias py='python3'
 alias ro='robot'
 alias roa='robot -A'
+
 alias so311="source ~/venv311/bin/activate"
 alias so312="source ~/venv312/bin/activate"
 alias so313="source ~/venv313/bin/activate"
+alias so314="source ~/venv314/bin/activate"
 alias dea="deactivate"
-alias t4='tail -n 60'
-alias tf='tail -f'
-# SPECIALS
-alias brewup='~/git/dotfiles/brew/brewup.sh'
-alias plum='java -jar /opt/homebrew/Cellar/plantuml/1.2026.2/libexec/plantuml.jar'
-alias tedo='docker run -e ANTORA_PLAYBOOK=local.yml -u $(id -u) -v "/$PWD:/antora:Z" --rm -it techdoc-docker-release-local.bahnhub.tech.rz.db.de/techdoc:3.8.4 build'
-# GIT
+# =========================================================
+# Navigation
+# =========================================================
+
+# alias -- -='cd -'  # -- prevents - being parsed as a flag; cd - jumps to previous directory
+
+# =========================================================
+# Editor
+# =========================================================
+
+# alias vim='nvim'
+alias n='nvim'
+
+# =========================================================
+# Git
+# =========================================================
+
+alias gadog='PAGER="less -F -X" git log --all --decorate --oneline --graph'
 alias gaa='git add .'
 alias gb='git branch'
 alias gba='git branch --all'
@@ -39,7 +67,6 @@ alias gfa='git fetch --all --prune'
 alias gl='git pull'
 alias glg='git log --stat'
 alias glgp='git log --stat -p'
-# alias glo='git log --oneline --decorate'
 alias glo='git log -n 10 --pretty="- %h %Cgreen%as %C(auto)%s %d %Cblue%an"'
 alias glol='git log --pretty="- %h %Cgreen%as %C(auto)%s %d %Cblue%an"'
 alias glols='git log  --pretty="-%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset" --stat'
@@ -52,20 +79,3 @@ alias grbom='git rebase origin/$(git_main_branch)'
 alias grs='git restore'
 alias grss='git restore --staged'
 alias gst='git status --untracked-files'
-# NSO native
-alias cli='ncs_cli -Cu admin'
-alias gol='cd ~/ncsrun/logs'
-alias gop='cd ~/ncsrun/packages/'
-alias ncss='ncs --cd ~/ncsrun'
-alias ncsk='ncs --cd ~/ncsrun --stop'
-alias ncsr='ncs --cd ~/ncsrun --reload'
-alias sncs='source ~/nso-6.3.7/ncsrc'
-# SDE-NSO
-alias mkb='make build'
-alias mkc='make testenv-cli'
-alias mkk='make testenv-stop'
-alias mkl='make testenv-log-service'
-alias mkr='make testenv-rebuild'
-alias mks='make testenv-start'
-alias mksh='make testenv-shell'
-alias mkt='make testenv-test'

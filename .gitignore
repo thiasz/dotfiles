@@ -3,6 +3,7 @@ Dockerfile
 .mypy_cache/
 .pylint.d/
 *.fxs
+nvim/nvim-pack-lock.json
 tmp/
 **/logs
 **/results

@@ -1,12 +1,10 @@
 vim.pack.add({
 	{ src = "https://github.com/L3MON4D3/LuaSnip" },
 	{ src = "https://github.com/Saghen/blink.cmp" },
-	-- { src = "https://github.com/Saghen/blink.cmp", version = "1.*" },
+	{ src = "https://github.com/Saghen/blink.lib" },
 	{ src = "https://github.com/rafamadriz/friendly-snippets" },
 })
 
--- ~/.local/share/nvim/site/pack/core/opt/blink.cmp
--- cargo build --release
 vim.api.nvim_create_autocmd("PackChanged", {
 	desc = "Build blink.cmp after install/update",
 	group = vim.api.nvim_create_augroup("blink_build", { clear = true }),
@@ -47,13 +45,7 @@ require("blink.cmp").setup({
 		documentation = { auto_show = true },
 	},
 	signature = { enabled = true },
-	fuzzy = {
-		implementation = "lua",
-		-- implementation = "rust",
-		-- implementation = "prefer_rust",
-		-- implementation = "prefer_rust_with_warning",
-		-- prebuilt_binaries = "download = true",
-	},
+	fuzzy = { implementation = "lua" },
 	sources = {
 		default = {
 			"lsp",

@@ -1,47 +1,22 @@
--- ================================================================================================
--- TITLE : conform.nvim
--- LINKS :
---   > github : https://github.com/stevearc/conform.nvim
--- ABOUT : Lightweight yet powerful formatter plugin for Neovim
---
--- TITLE : nvim-autopairs
--- LINKS :
---   > github : https://github.com/windwp/nvim-autopairs
--- ABOUT : A super powerful autopair plugin for Neovim that supports multiple characters.
---
--- TITLE : nvim-ts-autotag
--- LINKS :
---   > github : https://github.com/windwp/nvim-ts-autotag
--- ABOUT : Use treesitter to autoclose and autorename html tag
--- ================================================================================================
+vim.pack.add({
+	{ src = "https://github.com/stevearc/conform.nvim" },
+	{ src = "https://github.com/windwp/nvim-ts-autotag" },
+})
 
-return {
-	{
-		"stevearc/conform.nvim",
-		opts = {
-			format_on_save = {
-				timeout_ms = 3000,
-				lsp_format = "fallback",
-			},
-			formatters_by_ft = {
-				json = { "prettier" },
-				lua = { "stylua" },
-				-- python = { "isort", "black" },
-				python = { "ruff" },
-				xml = { "xmlformatter" },
-				yaml = { "prettier" },
-			},
-		},
+require("conform").setup({
+	format_on_save = {
+		timeout_ms = 8000,
+		lsp_format = "fallback",
 	},
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		config = true,
+	formatters_by_ft = {
+		graphql = { "prettierd" },
+		json = { "prettierd" },
+		html = { "prettierd" },
+		lua = { "stylua" },
+		python = { "ruff" },
+		xml = { "xmllint" },
+		yaml = { "prettierd" },
 	},
-	{
-		"windwp/nvim-ts-autotag",
-		config = function()
-			require("nvim-ts-autotag").setup()
-		end,
-	},
-}
+})
+
+require("nvim-ts-autotag").setup()

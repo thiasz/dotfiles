@@ -91,3 +91,6 @@ vim.keymap.set("n", "<leader>tq", ":tabclose<CR>", { silent = true, desc = "Clos
 vim.keymap.set("n", "<leader>ts", ":tab split<CR>", { silent = true, desc = "Split to new tab" })
 vim.keymap.set("n", "<leader><Tab>", ":tabnext<CR>", { silent = true, desc = "Next tab" })
 vim.keymap.set("n", "<leader><S-Tab>", ":tabprevious<CR>", { silent = true, desc = "Previous tab" })
+
+-- comment string
+vim.keymap.set("n", "&", ":norm gcc<CR>j", { desc = "comment string" })

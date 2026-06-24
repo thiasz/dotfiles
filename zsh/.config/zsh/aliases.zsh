@@ -1,23 +1,17 @@
 # ls
-alias l='ls'
+# alias l='ls'
 alias ll='ls -lhtr'
 alias la='ls -lha'
 # Better ls
-# alias l='eza --icons'
-# alias ll='eza -lh --icons --git'
-# alias la='eza -lah --icons --git'
+alias l='eza --icons'
+alias lh='eza -lh --icons --git'
+alias le='eza -lah --icons --git'
 # alias tree='eza --tree --icons'
-
 # Reuse ls completions for eza (avoids defining a separate completion function)
 # compdef eza=ls
-
-# Better cat
-# alias cat='bat'
-
 # =========================================================
 # Core utilities
 # =========================================================
-
 alias cls='clear && printf "\033[3J"'
 alias diff='diff --color=auto'
 alias df='df -h'
@@ -27,29 +21,19 @@ alias pi='ping'
 alias py='python3'
 alias ro='robot'
 alias roa='robot -A'
-
 alias so311="source ~/venv311/bin/activate"
 alias so312="source ~/venv312/bin/activate"
 alias so313="source ~/venv313/bin/activate"
 alias so314="source ~/venv314/bin/activate"
 alias dea="deactivate"
 # =========================================================
-# Navigation
-# =========================================================
-
-# alias -- -='cd -'  # -- prevents - being parsed as a flag; cd - jumps to previous directory
-
-# =========================================================
 # Editor
 # =========================================================
-
 # alias vim='nvim'
 alias n='nvim'
-
 # =========================================================
 # Git
 # =========================================================
-
 alias gadog='PAGER="less -F -X" git log --all --decorate --oneline --graph'
 alias gaa='git add .'
 alias gb='git branch'
@@ -62,6 +46,7 @@ alias gc!='git commit -v --amend'
 alias gcn!='git commit -v --no-edit --amend'
 alias gcmsg='git commit -m' 
 alias gd='git diff'
+alias gdt='git difftool'
 alias gf='git fetch'
 alias gfa='git fetch --all --prune'
 alias gl='git pull'
@@ -78,4 +63,29 @@ alias grbi='git rebase -i'
 alias grbom='git rebase origin/$(git_main_branch)'
 alias grs='git restore'
 alias grss='git restore --staged'
-alias gst='git status --untracked-files'
+alias gst='git status'
+alias gstu='git status --untracked-files'
+alias gs='git stash'
+alias gsa='git stash apply'
+# =========================================================
+# NSO native
+# =========================================================
+alias ncscli='ncs_cli -Cu admin'
+alias ncsgol='cd ~/ncsrun/logs'
+alias ncsgop='cd ~/ncsrun/packages/'
+alias ncss='ncs --cd ~/ncsrun'
+alias ncsk='ncs --cd ~/ncsrun --stop'
+alias ncsr='ncs --cd ~/ncsrun --reload'
+alias sncs='source ~/nso-6.4.6/ncsrc'
+# =========================================================
+# NSO SDE
+# =========================================================
+alias mkb='make build'
+alias mkc='make testenv-cli'
+alias mkcl='make testenv-copy-logs'
+alias mkk='make testenv-stop'
+alias mkl='make testenv-log-service'
+alias mkr='make testenv-rebuild'
+alias mks='make testenv-start'
+alias mksh='make testenv-shell'
+alias mkt='make testenv-test'

@@ -46,8 +46,8 @@ git_prompt_summary() {
 	(( deleted )) && parts+=("-${deleted}")
 	(( renamed )) && parts+=("r${renamed}")
 	(( unmerged )) && parts+=("!${unmerged}")
-	(( ahead )) && parts+=("‚Üë${ahead}")
-	(( behind )) && parts+=("‚Üì${behind}")
+	(( ahead )) && parts+=("↑${ahead}")
+	(( behind )) && parts+=("↓${behind}")
 
 	(( ${#parts} )) || return
 	print -r -- "${(j: :)parts}"
@@ -70,15 +70,15 @@ git_prompt_info() {
 			-[0-9]*) colored_details+=("%F{#eb6f92}${token}%f") ;;
 			r[0-9]*) colored_details+=("%F{#c4a7e7}${token}%f") ;;
 			\![0-9]*) colored_details+=("%F{#e3b85a}${token}%f") ;;
-			‚Üë[0-9]*) colored_details+=("%F{#908caa}${token}%f") ;;
-			‚Üì[0-9]*) colored_details+=("%F{#908caa}${token}%f") ;;
+			↑[0-9]*) colored_details+=("%F{#908caa}${token}%f") ;;
+			↓[0-9]*) colored_details+=("%F{#908caa}${token}%f") ;;
 			*) colored_details+=("$token") ;;
 		esac
 	done
 
-	# print -r -- "%F{#9ccfd8}ÓÇ† ${branch}%f${colored_details:+ ${=colored_details}}"
-	print -r -- "%F{#d06a4c}ÓÇ† ${branch}%f${colored_details:+ ${=colored_details}}"
+	# print -r -- "%F{#9ccfd8} ${branch}%f${colored_details:+ ${=colored_details}}"
+	print -r -- "%F{#d06a4c} ${branch}%f${colored_details:+ ${=colored_details}}"
 }
 
-PROMPT=$'%F{#556b2f}%~%f $(git_prompt_info)\n%F{#eb6f92}‚ùØ%f '
+PROMPT=$'%F{#556b2f}%~%f $(git_prompt_info)\n%F{#eb6f92}❯%f '
 RPROMPT=''

@@ -32,12 +32,9 @@ vim.keymap.set("n", "<leader>w", ":w<cr>", { silent = true, noremap = true, desc
 vim.keymap.set({ "n", "t" }, "<leader>q", ":q<cr>", { silent = true, noremap = true, desc = "Quit current buffer" })
 
 -- Little one from Primeagen to mass replace string in a file
-vim.keymap.set(
-	"n",
-	"<leader>s",
-	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-	{ silent = false, desc = "Search and replace word under cursor" }
-)
+-- vim.keymap.set("n", "<leader>ss", [[:%s/<C-r><C-w>/<C-r><C-w>/gcI<Left><Left><Left>]], { silent = false })
+vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { silent = false })
+-- vim.keymap.set("n", "<leader>sz", ':%norm f,d$T:d0f_y0Pa <cr>:%norm$a touch<cr>ggVG"+y', { silent = false }
 
 -- Navigate through buffers
 vim.keymap.set("n", "<S-l>", ":bnext<CR>", { silent = true, desc = "Next buffer" })
@@ -64,12 +61,16 @@ vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank selection to system clipb
 vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Yank line to system clipboard" })
 
 -- Open buffer to the right
-vim.keymap.set("n", "<leader>o", ":vsplit<CR>", { silent = true, desc = "Vertical split" })
-vim.keymap.set("n", "<leader>u", ":split<CR>", { silent = true, desc = "Horizontal split" })
+vim.keymap.set("n", "<leader>v", ":vsplit<CR>", { silent = true, desc = "Vertical split" })
+vim.keymap.set("n", "<leader>V", ":split<CR>", { silent = true, desc = "Horizontal split" })
 
 -- Move selection up and down
 vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv", { silent = true, desc = "Move selection down" })
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv", { silent = true, desc = "Move selection up" })
+
+-- Indent and Unindent
+vim.keymap.set("v", "<", "<gv", { desc = "Unindent and keep selection" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent and keep selection" })
 
 -- Exit terminal with Esc
 vim.keymap.set("t", "<Esc>", "<C-\\><C-N>", { desc = "Exit terminal mode" })
@@ -91,6 +92,12 @@ vim.keymap.set("n", "<leader>tq", ":tabclose<CR>", { silent = true, desc = "Clos
 vim.keymap.set("n", "<leader>ts", ":tab split<CR>", { silent = true, desc = "Split to new tab" })
 vim.keymap.set("n", "<leader><Tab>", ":tabnext<CR>", { silent = true, desc = "Next tab" })
 vim.keymap.set("n", "<leader><S-Tab>", ":tabprevious<CR>", { silent = true, desc = "Previous tab" })
+
+-- navigate Quick Fix List
+-- vim.keymap.set("n", "<C-q>", ":copen<CR>", { desc = "open Quick Fix List" })
+-- vim.keymap.set("n", "<C-C>", ":cclose<CR>", { desc = "close Quick Fix List" })
+vim.keymap.set("n", "<C-n>", ":cnext<CR>", { desc = "next Entry in Quick Fix List" })
+vim.keymap.set("n", "<C-m>", ":cprevious<CR>", { desc = "previous Entry in Quick Fix List" })
 
 -- comment string
 vim.keymap.set("n", "&", ":norm gcc<CR>j", { desc = "comment string" })

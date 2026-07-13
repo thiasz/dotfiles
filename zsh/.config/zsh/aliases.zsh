@@ -6,7 +6,7 @@ alias la='ls -lha'
 alias l='eza --icons'
 alias lh='eza -lh --icons --git'
 alias le='eza -lah --icons --git'
-# alias tree='eza --tree --icons'
+alias tree='eza --tree --icons'
 # Reuse ls completions for eza (avoids defining a separate completion function)
 # compdef eza=ls
 # =========================================================

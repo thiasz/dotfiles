@@ -49,17 +49,10 @@ local config = wezterm.config_builder()
 --
 -- config.color_scheme = "Custom Tokyo Night"
 -- config.color_scheme = "rose-pine"
--- config.color_scheme = "Railscasts (dark) (terminal.sexy)"
--- config.color_scheme = "Red Planet"
--- config.color_scheme = "Tartan (terminal.sexy)"
--- config.color_scheme = "Trim Yer Beard (terminal.sexy)"
--- config.color_scheme = "Broadcast"
--- config.color_scheme = "Chameleon (Gogh)"
--- config.color_scheme = "Darkside"
 config.color_scheme = "Earthsong"
 
 config.font = wezterm.font("Hack Nerd Font", { weight = "Regular" })
-config.font_size = 16
+config.font_size = 18
 config.send_composed_key_when_left_alt_is_pressed = true
 config.window_close_confirmation = "NeverPrompt"
 -- config.leader = { key = "s", mods = "CTRL" }
@@ -89,24 +82,44 @@ config.keys = {
 		key = "w",
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
+	-- {
+	-- 	mods = "ALT",
+	-- 	key = "LeftArrow",
+	-- 	action = wezterm.action.ActivatePaneDirection("Left"),
+	-- },
+	-- {
+	-- 	mods = "ALT",
+	-- 	key = "RightArrow",
+	-- 	action = wezterm.action.ActivatePaneDirection("Right"),
+	-- },
+	-- {
+	-- 	mods = "ALT",
+	-- 	key = "DownArrow",
+	-- 	action = wezterm.action.ActivatePaneDirection("Down"),
+	-- },
+	-- {
+	-- 	mods = "ALT",
+	-- 	key = "UpArrow",
+	-- 	action = wezterm.action.ActivatePaneDirection("Up"),
+	-- },
 	{
 		mods = "ALT",
-		key = "LeftArrow",
+		key = "h",
 		action = wezterm.action.ActivatePaneDirection("Left"),
 	},
 	{
 		mods = "ALT",
-		key = "RightArrow",
+		key = "l",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
 		mods = "ALT",
-		key = "DownArrow",
+		key = "j",
 		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 	{
 		mods = "ALT",
-		key = "UpArrow",
+		key = "k",
 		action = wezterm.action.ActivatePaneDirection("Up"),
 	},
 	{
@@ -114,12 +127,17 @@ config.keys = {
 		key = "m",
 		action = wezterm.action.TogglePaneZoomState,
 	},
+	-- {
+	-- 	mods = "ALT",
+	-- 	key = "p",
+	-- 	action = wezterm.action.PaneSelect({
+	-- 		mode = "SwapWithActive",
+	-- 	}),
+	-- },
 	{
 		mods = "ALT",
 		key = "p",
-		action = wezterm.action.PaneSelect({
-			mode = "SwapWithActive",
-		}),
+		action = wezterm.action.RotatePanes("Clockwise"),
 	},
 	-- paste from the clipboard
 	{
@@ -133,12 +151,19 @@ config.keys = {
 		mods = "CTRL",
 		action = wezterm.action.PasteFrom("PrimarySelection"),
 	},
-	-- disable default assignment
+	-- deactivate hotkey
 	{
 		key = "q",
 		mods = "SHIFT|CTRL",
 		action = wezterm.action.DisableDefaultAssignment,
 	},
+
+	-- fix hyper key working
+	-- {
+	-- 	key = "n",
+	-- 	mods = "SHIFT|ALT|CTRL|SUPER",
+	-- 	action = wezterm.action.DisableDefaultAssignment,
+	-- },
 }
 
 for i = 1, 5 do

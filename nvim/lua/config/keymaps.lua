@@ -59,6 +59,7 @@ vim.keymap.set("n", "<leader>p", '"_dP', { desc = "Paste without replacing regis
 vim.keymap.set("n", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank selection to system clipboard" })
 vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Yank line to system clipboard" })
+vim.keymap.set("n", "<leader>a", 'ggVG"+Y', { desc = "Yank line to system clipboard" })
 
 -- Open buffer to the right
 vim.keymap.set("n", "<leader>v", ":vsplit<CR>", { silent = true, desc = "Vertical split" })

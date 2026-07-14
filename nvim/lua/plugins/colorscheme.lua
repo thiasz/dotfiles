@@ -1,7 +1,7 @@
 vim.pack.add({
-	{ src = "https://github.com/vague2k/vague.nvim" },
+	-- { src = "https://github.com/vague2k/vague.nvim" },
 	{ src = "https://github.com/srcery-colors/srcery-vim" },
-	{ src = "https://github.com/guillermodotn/nvim-earthsong" },
+	-- { src = "https://github.com/guillermodotn/nvim-earthsong" },
 })
 
 -- vim.cmd("colorscheme vague")

@@ -1,3 +1,4 @@
+-- plugins
 vim.pack.add({
 	{ src = "https://github.com/mason-org/mason-lspconfig.nvim" },
 	{ src = "https://github.com/mason-org/mason.nvim" },
@@ -5,6 +6,7 @@ vim.pack.add({
 	{ src = "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" },
 })
 
+-- options
 require("mason").setup()
 require("mason-lspconfig").setup({})
 require("mason-tool-installer").setup({
@@ -22,7 +24,7 @@ require("mason-tool-installer").setup({
 	run_on_start = true,
 })
 
--- LspAttach keymaps
+-- keymaps
 vim.api.nvim_create_autocmd(
 	"LspAttach",
 	{ --  Use LspAttach autocommand to only map the following keys after the language server attaches to the current buffer

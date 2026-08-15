@@ -15,6 +15,17 @@ _zplugin_load() {
   source "${plugin_path}/${2}.plugin.zsh"
 }
 
+_zplugin_load2() {
+  local plugin_path="${ZPLUGINDIR}/${2}"
+  if [[ ! -d "$plugin_path" ]]; then
+    mkdir -p "$ZPLUGINDIR"
+    echo "Installing ${2}..."
+    git clone --depth=1 "https://github.com/${1}/${2}" "$plugin_path" \
+      || { echo "ERROR: failed to install ${2}" >&2; return 1; }
+  fi
+  source "${plugin_path}/${2}.zsh-theme"
+}
+
 zplugin-update() {
   local dir
   for dir in "${ZPLUGINDIR}"/*/; do
@@ -28,3 +39,4 @@ _zplugin_load zsh-users zsh-history-substring-search
 _zplugin_load jeffreytse zsh-vi-mode
 _zplugin_load zdharma-continuum fast-syntax-highlighting
 _zplugin_load mfaerevaag wd
+_zplugin_load2 romkatv powerlevel10k

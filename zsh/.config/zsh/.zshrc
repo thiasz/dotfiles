@@ -1,17 +1,46 @@
-setopt AUTOCD
-setopt NOBEEP
-setopt NUMERIC_GLOB_SORT  # sort file10 after file9, not after file1
+# Zsh options
+setopt no_beep              # Disable terminal bell
+setopt extended_glob        # Enable extended globbing (**, ~(foo|bar), etc.)
+setopt auto_pushd           # cd pushes old dir onto the directory stack
+setopt pushd_ignore_dups    # Don't push duplicate directories onto the stack
+setopt interactive_comments # Allow # comments in interactive shell
+setopt append_history       # Append to history file rather than overwrite
+setopt share_history        # Share history across sessions in real time
+setopt hist_ignore_space    # Don't record commands starting with a space
+setopt hist_ignore_all_dups # Remove older duplicate entries from history
+setopt hist_save_no_dups    # Don't save duplicate lines to history file
+setopt hist_ignore_dups     # Don't record consecutive duplicate commands
+setopt hist_find_no_dups    # Don't show duplicates when searching history
+setopt hist_reduce_blanks   # Remove superfluous blanks from history entries
+setopt prompt_subst         # Enable command substitution in prompt strings
 
-source "$ZDOTDIR/helpers.zsh"
+# History configuration
+HISTSIZE=5000              # Max number of commands in memory
+HISTFILE="$HOME/.zsh_history"  # History file location
+SAVEHIST=$HISTSIZE         # Max lines saved to history file
+HISTDUP=erase              # Remove duplicates when loading history
 
-source_if_exists "$ZDOTDIR/completion.zsh"
-source_if_exists "$ZDOTDIR/plugins.zsh"
-source_if_exists "$ZDOTDIR/history.zsh"
-source_if_exists "$ZDOTDIR/keybindings.zsh"
-source_if_exists "$ZDOTDIR/aliases.zsh"
-# source_if_exists "$ZDOTDIR/prompt.zsh"
-source_if_exists "$ZDOTDIR/prompt2.zsh"
+# Completion system
+autoload -Uz compinit       # Load completion system on demand (fast startup)
+compinit                    # Initialize completion
 
-if [[ -f ~/venv312/bin/activate ]]; then
-  source ~/venv312/bin/activate
-fi
+# Completion styling
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # Case-insensitive completion
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"  # Colorize completions like ls
+zstyle ':completion:*' menu select                        # Arrow-key menu selection
+
+# Vi mode - vi-style keybindings for command line editing
+set -o vi                   # Enable vi mode
+bindkey -v                  # Load vi keymap
+
+# Keybindings
+bindkey '^I' expand-or-complete        # Tab to complete
+bindkey '^[[A' history-search-backward # Up arrow searches history
+bindkey '^[[B' history-search-forward  # Down arrow searches history
+
+# Short aliases
+source "$ZDOTDIR/aliases.zsh"
+source "$ZDOTDIR/plugins.zsh"
+
+# Powerlevel10k - fast prompt theme
+[[ ! -f "$ZDOTDIR/.p10k.zsh" ]] || source "$ZDOTDIR/.p10k.zsh"  # Load p10k config if it exists

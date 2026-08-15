@@ -223,7 +223,7 @@
   typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#908caa'
   # Color of the anchor directory segments (Rose Pine iris - same purpleish). Anchor segments are never shortened. The first
   # segment is always an anchor.
-  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#c4a7e7'
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#556b2f'
   # Display anchor directory segments in bold.
   typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true
   # Don't shorten directories that contain any of these files. They are anchors.
@@ -375,7 +375,8 @@
     if (( $1 )); then
       # Styling for up-to-date Git status (Rose Pine colors).
       local       meta='%f'     # default foreground
-      local      clean='%F{#9ccfd8}'   # Rose Pine foam (clean/branch) - light blue
+      # local      clean='%F{#9ccfd8}'   # Rose Pine foam (clean/branch) - light blue
+      local      clean='%F{#ff645a}'   #  foam (terracotta clean/branch)
       local   modified='%F{#f6c177}'  # Rose Pine gold (modified)
       local  untracked='%F{#31748f}'  # Rose Pine pine (untracked) - dark blue
       local conflicted='%F{#eb6f92}'  # Rose Pine love (conflicted)

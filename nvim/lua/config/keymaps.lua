@@ -46,7 +46,11 @@ vim.keymap.set("n", "<C-x>", ":bwipeout!<CR>", { silent = true, desc = "Close cu
 
 -- Center buffer when navigating up and down
 vim.keymap.set("n", "<S-k>", "<C-u>zz", { desc = "Scroll up and center" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and center" })
+vim.keymap.set("n", "<C-b>", "<C-b>zz", { desc = "Scroll up and center" })
 vim.keymap.set("n", "<S-j>", "<C-d>zz", { desc = "Scroll down and center" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and center" })
+vim.keymap.set("n", "<C-f>", "<C-f>zz", { desc = "Scroll down and center" })
 
 -- Center buffer when progressing through search results
 vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result centered" })
@@ -101,4 +105,4 @@ vim.keymap.set("n", "<C-n>", ":cnext<CR>", { desc = "next Entry in Quick Fix Lis
 vim.keymap.set("n", "<C-m>", ":cprevious<CR>", { desc = "previous Entry in Quick Fix List" })
 
 -- comment string
-vim.keymap.set("n", "&", ":norm gcc<CR>j", { desc = "comment string" })
+vim.keymap.set("n", "*", ":norm gcc<CR>j", { desc = "comment string" })

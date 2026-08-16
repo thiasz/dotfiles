@@ -37,5 +37,5 @@ vim.o.breakindent = true -- prevent line wrapping
 vim.opt.fillchars = { eob = " " }
 vim.o.laststatus = 3 -- global statusline
 
-vim.diagnostic.config({ virtual_text = false }) -- inline diagnostics
+vim.diagnostic.config({ virtual_text = true }) -- inline diagnostics
 vim.o.cmdheight = 0

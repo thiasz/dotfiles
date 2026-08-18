@@ -59,6 +59,16 @@ vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
 	end,
 })
 
+-- Create a custom command :PackUpdate that calls vim.pack.update()
+vim.api.nvim_create_user_command("PackUpdate", function()
+	-- pcall ensures errors don't crash Neovim
+	local ok, err = pcall(vim.pack.update)
+	if not ok then
+		vim.notify("Pack update failed: " .. tostring(err), vim.log.levels.ERROR)
+	end
+end, { desc = "Update all packages using vim.pack.update()" })
+
+-- Create a custom command :PackClean
 -- remove plugins from disk that are no longer in vim.pack.add() specs
 vim.api.nvim_create_user_command("PackClean", function()
 	local inactive = vim.iter(vim.pack.get())

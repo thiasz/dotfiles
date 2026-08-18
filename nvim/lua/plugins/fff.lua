@@ -31,16 +31,13 @@ fff.setup({
 		send_to_quickfix = "<C-q>",
 		focus_list = "<leader>l",
 		focus_preview = "<leader>p",
-		git = {
-			status_text_color = true,
-		},
-  layout = {
-    height = 0.9,
-    width = 0.9,
-    preview_position = 'right',   -- 'left' | 'right' | 'top' | 'bottom'
-    -- preview_size = 0.5,
-    -- anchor = 'center',
-    },
+	},
+	layout = {
+		height = 1.0,
+		width = 1.0,
+		preview_position = "right", -- 'left' | 'right' | 'top' | 'bottom'
+		preview_size = 0.6,
+		anchor = "center",
 	},
 })
 

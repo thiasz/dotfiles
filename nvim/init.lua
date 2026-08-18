@@ -1,17 +1,18 @@
+-- config
 require("config.options")
 require("config.keymaps")
 require("config.autocommands")
-
+-- plugins
 require("plugins.colorscheme")
 require("plugins.oil")
-require("plugins.blink")
-require("plugins.fff")
 require("plugins.git")
 require("plugins.lsp")
 require("plugins.conform")
-require("plugins.fidget")
+-- require("plugins.fidget")
 require("plugins.mini")
 require("plugins.lualine")
-require("plugins.treesitter")
 require("plugins.trouble")
+require("plugins.blink")
+require("plugins.fff")
+require("plugins.treesitter")
 -- require("plugins.kulala")

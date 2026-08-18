@@ -1,4 +1,4 @@
-require("vim._core.ui2").enable({})
+-- require("vim._core.ui2").enable({})
 vim.g.mapleader = " " -- space leader key
 -- vim.o.mouse = "" -- disable mouse in nvim
 
@@ -12,7 +12,7 @@ vim.o.relativenumber = true -- enable relative line numbers
 vim.o.completeopt = "menu,menuone,noselect,preview" -- omnicomplete options for popup menu
 vim.o.pumheight = 10 -- max height of completion menu
 vim.o.winborder = "rounded" -- rounded border
-vim.o.showmode = false -- disable showing mode below statusline
+vim.o.showmode = true -- disable showing mode below statusline
 
 vim.o.cursorline = true -- enable cursor line
 vim.o.signcolumn = "yes" -- always show sign column
@@ -38,4 +38,4 @@ vim.opt.fillchars = { eob = " " }
 vim.o.laststatus = 3 -- global statusline
 
 vim.diagnostic.config({ virtual_text = true }) -- inline diagnostics
-vim.o.cmdheight = 0
+vim.o.cmdheight = 1

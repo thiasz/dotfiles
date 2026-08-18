@@ -28,12 +28,12 @@ vim.keymap.set("n", "<C-l>", ":wincmd l<CR>", { silent = true, desc = "Move to r
 vim.keymap.set("n", "<leader>rr", ":wincmd r<CR>", { silent = true, desc = "Rotate split buffers" })
 
 -- Save and quit current file quicker
-vim.keymap.set("n", "<leader>w", ":w<cr>", { silent = true, noremap = true, desc = "Save current file" })
-vim.keymap.set({ "n", "t" }, "<leader>q", ":q<cr>", { silent = true, noremap = true, desc = "Quit current buffer" })
+-- vim.keymap.set("n", "<leader>w", ":w<cr>", { silent = true, noremap = true, desc = "Save current file" })
+-- vim.keymap.set({ "n", "t" }, "<leader>q", ":q<cr>", { silent = true, noremap = true, desc = "Quit current buffer" })
 
 -- Little one from Primeagen to mass replace string in a file
 -- vim.keymap.set("n", "<leader>ss", [[:%s/<C-r><C-w>/<C-r><C-w>/gcI<Left><Left><Left>]], { silent = false })
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { silent = false })
+vim.keymap.set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { silent = false })
 -- vim.keymap.set("n", "<leader>sz", ':%norm f,d$T:d0f_y0Pa <cr>:%norm$a touch<cr>ggVG"+y', { silent = false }
 
 -- Navigate through buffers
@@ -42,13 +42,13 @@ vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true, desc = "Previous
 
 -- Close currently active buffer
 vim.keymap.set("n", "<C-c>", ":bwipeout<CR>", { silent = true, desc = "Close current buffer" })
-vim.keymap.set("n", "<C-x>", ":bwipeout!<CR>", { silent = true, desc = "Close current buffer" })
+-- vim.keymap.set("n", "<C-x>", ":bwipeout!<CR>", { silent = true, desc = "Close current buffer" })
 
 -- Center buffer when navigating up and down
-vim.keymap.set("n", "<S-k>", "<C-u>zz", { desc = "Scroll up and center" })
+-- vim.keymap.set("n", "<S-k>", "<C-u>zz", { desc = "Scroll up and center" })
+-- vim.keymap.set("n", "<S-j>", "<C-d>zz", { desc = "Scroll down and center" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll up and center" })
 vim.keymap.set("n", "<C-b>", "<C-b>zz", { desc = "Scroll up and center" })
-vim.keymap.set("n", "<S-j>", "<C-d>zz", { desc = "Scroll down and center" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll down and center" })
 vim.keymap.set("n", "<C-f>", "<C-f>zz", { desc = "Scroll down and center" })
 

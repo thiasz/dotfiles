@@ -39,6 +39,7 @@ vim.keymap.set("n", "<leader>ss", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 -- Navigate through buffers
 vim.keymap.set("n", "<S-l>", ":bnext<CR>", { silent = true, desc = "Next buffer" })
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>", { silent = true, desc = "Previous buffer" })
+vim.keymap.set("n", "<leader>b", ":ls<CR>:b<space>", { silent = true, desc = "Previous buffer" })
 
 -- Close currently active buffer
 vim.keymap.set("n", "<C-c>", ":bwipeout<CR>", { silent = true, desc = "Close current buffer" })

@@ -194,9 +194,11 @@
 
   ################################[ prompt_char: prompt symbol ]################################
   # Rose Pine foam prompt symbol if the last command succeeded.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#9ccfd8'
+  # typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='green3'   # Earthsong - green
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#556b2f'   # Earthsong - green
   # Rose Pine love prompt symbol if the last command failed.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#eb6f92'
+  # typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='red3'   # Earthsong - terracotta
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#ff645a'   # Earthsong - terracotta
   # Default prompt symbol.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
   # Prompt symbol in command vi mode.
@@ -212,21 +214,21 @@
   typeset -g POWERLEVEL9K_PROMPT_CHAR_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL=
 
   ##################################[ dir: current directory ]##################################
-  # Default current directory color (earthsong - green).
-  # typeset -g POWERLEVEL9K_DIR_FOREGROUND='green3'
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND='#556b2f'
+  # Default current directory color .
+  # typeset -g POWERLEVEL9K_DIR_FOREGROUND='green3'   # Earthsong - green
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND='#556b2f'   # Earthsong - green
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
   # Replace removed segment suffixes with this symbol.
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
-  # Color of the shortened directory segments (earthsong - green).
-  # typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='green4'
-  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#556b2f'
+  # Color of the shortened directory segments.
+  # typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='green4'   # Earthsong - green
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#556b2f'   # Earthsong - green
   # Color of the anchor directory segments  Anchor segments are never shortened.
-  # The first segment is always an anchor (earthsong - green lighter).
-  # typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='green3'
-  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#718e3f'
+  # The first segment is always an anchor.
+  # typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='green3'   # Earthsong - green
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#718e3f'   # Earthsong - ligther green
   # Display anchor directory segments in bold.
   typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=false
   # Don't shorten directories that contain any of these files. They are anchors.
@@ -378,7 +380,7 @@
     if (( $1 )); then
       # Styling for up-to-date Git status (Rose Pine colors).
       local       meta='%f'     # default foreground
-      local      clean='%F{#ff645a}'   # Earthsong foam (terracotta clean/branch)
+      local      clean='%F{#ff645a}'  # Earthsong foam (terracotta clean/branch)
       local   modified='%F{#f6c177}'  # Earthsong (modified) - gold
       local  untracked='%F{#31748f}'  # Earthsong (untracked) - dark blue
       local conflicted='%F{#eb6f92}'  # Earthsong (conflicted) - rosa

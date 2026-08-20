@@ -213,19 +213,22 @@
 
   ##################################[ dir: current directory ]##################################
   # Default current directory color (earthsong - green).
+  # typeset -g POWERLEVEL9K_DIR_FOREGROUND='green3'
   typeset -g POWERLEVEL9K_DIR_FOREGROUND='#556b2f'
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
   # Replace removed segment suffixes with this symbol.
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
-  # Color of the shortened directory segments (Rose Pine subtle).
-  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#908caa'
-  # Color of the anchor directory segments (Rose Pine iris - same purpleish). Anchor segments are never shortened. The first
-  # segment is always an anchor.
-  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#556b2f'
+  # Color of the shortened directory segments (earthsong - green).
+  # typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='green4'
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#556b2f'
+  # Color of the anchor directory segments  Anchor segments are never shortened.
+  # The first segment is always an anchor (earthsong - green lighter).
+  # typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='green3'
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#718e3f'
   # Display anchor directory segments in bold.
-  typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=false
   # Don't shorten directories that contain any of these files. They are anchors.
   local anchor_files=(
     .bzr
@@ -375,11 +378,14 @@
     if (( $1 )); then
       # Styling for up-to-date Git status (Rose Pine colors).
       local       meta='%f'     # default foreground
-      # local      clean='%F{#9ccfd8}'   # Rose Pine foam (clean/branch) - light blue
-      local      clean='%F{#ff645a}'   #  foam (terracotta clean/branch)
-      local   modified='%F{#f6c177}'  # Rose Pine gold (modified)
-      local  untracked='%F{#31748f}'  # Rose Pine pine (untracked) - dark blue
-      local conflicted='%F{#eb6f92}'  # Rose Pine love (conflicted)
+      local      clean='%F{#ff645a}'   # Earthsong foam (terracotta clean/branch)
+      local   modified='%F{#f6c177}'  # Earthsong (modified) - gold
+      local  untracked='%F{#31748f}'  # Earthsong (untracked) - dark blue
+      local conflicted='%F{#eb6f92}'  # Earthsong (conflicted) - rosa
+      # local      clean='%F{red3}'   #  (clean/branch)
+      # local   modified='%F{yellow}'  # (modified)
+      # local  untracked='%F{blue}'  # (untracked)
+      # local conflicted='%F{red}'  # (conflicted)
     else
       # Styling for incomplete and stale Git status.
       local       meta='%244F'  # grey foreground

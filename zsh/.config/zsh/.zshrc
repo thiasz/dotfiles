@@ -30,8 +30,9 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"  # Colorize completions 
 zstyle ':completion:*' menu select                        # Arrow-key menu selection
 
 # Vi mode - vi-style keybindings for command line editing
-set -o vi                   # Enable vi mode
-bindkey -v                  # Load vi keymap
+# set -o vi                   # Enable vi mode
+# bindkey -v                  # Load vi keymap
+bindkey -e                  # Load emacs keymap
 
 # Keybindings
 bindkey '^I' expand-or-complete        # Tab to complete

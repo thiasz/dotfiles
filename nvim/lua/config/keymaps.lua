@@ -102,8 +102,8 @@ vim.keymap.set("n", "<leader><S-Tab>", ":tabprevious<CR>", { silent = true, desc
 -- navigate Quick Fix List
 -- vim.keymap.set("n", "<C-q>", ":copen<CR>", { desc = "open Quick Fix List" })
 -- vim.keymap.set("n", "<C-C>", ":cclose<CR>", { desc = "close Quick Fix List" })
-vim.keymap.set("n", "<C-n>", ":cnext<CR>", { desc = "next Entry in Quick Fix List" })
-vim.keymap.set("n", "<C-m>", ":cprevious<CR>", { desc = "previous Entry in Quick Fix List" })
+-- vim.keymap.set("n", "<C-n>", ":cnext<CR>", { desc = "next Entry in Quick Fix List" })
+-- vim.keymap.set("n", "<C-m>", ":cprevious<CR>", { desc = "previous Entry in Quick Fix List" })
 
 -- comment string
 vim.keymap.set("n", "*", ":norm gcc<CR>j", { desc = "comment string" })

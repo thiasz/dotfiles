@@ -1,8 +1,3 @@
-vim.pack.add({
-	{ src = "https://github.com/stevearc/conform.nvim" },
-	{ src = "https://github.com/windwp/nvim-ts-autotag" },
-})
-
 require("conform").setup({
 	format_on_save = {
 		timeout_ms = 8000,
@@ -18,5 +13,3 @@ require("conform").setup({
 		yaml = { "prettierd" },
 	},
 })
-
-require("nvim-ts-autotag").setup()

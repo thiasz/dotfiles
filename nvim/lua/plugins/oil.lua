@@ -1,8 +1,3 @@
-vim.pack.add({
-	"https://github.com/stevearc/oil.nvim",
-	"https://github.com/refractalize/oil-git-status.nvim",
-})
-
 require("oil").setup({
 	skip_confirm_for_simple_edits = true,
 	win_options = {

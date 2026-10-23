@@ -4,59 +4,27 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- local custom = wezterm.color.get_builtin_schemes()["Tokyo Night"]
--- custom.background = "#090B10"
--- custom.tab_bar.background = "#090B10"
--- custom.tab_bar.inactive_tab.bg_color = "#090B10"
--- custom.tab_bar.new_tab.bg_color = "#090B10"
---
--- custom.foreground = "#cdcdcd"
---
--- custom.cursor_bg = "#cdcdcd"
--- custom.cursor_fg = "#141415"
--- custom.cursor_border = "#cdcdcd"
---
--- custom.selection_fg = "#cdcdcd"
--- custom.selection_bg = "#252530"
---
--- custom.scrollbar_thumb = "#252530"
--- custom.split = "#252530"
---
--- custom.ansi = {
--- 	"#252530",
--- 	"#d8647e",
--- 	"#7fa563",
--- 	"#f3be7c",
--- 	"#6e94b2",
--- 	"#bb9dbd",
--- 	"#aeaed1",
--- 	"#cdcdcd",
--- }
--- custom.brights = {
--- 	"#606079",
--- 	"#e08398",
--- 	"#99b782",
--- 	"#f5cb96",
--- 	"#8ba9c1",
--- 	"#c9b1ca",
--- 	"#bebeda",
--- 	"#d7d7d7",
--- }
---
--- config.color_schemes = {
--- 	["Custom Tokyo Night"] = custom,
--- }
---
 -- config.color_scheme = "Custom Tokyo Night"
 -- config.color_scheme = "rose-pine"
-config.color_scheme = "Earthsong"
+-- config.color_scheme = "Earthsong"
+-- config.color_scheme = "3024 (light) (terminal.sexy)"
+-- config.color_scheme = "Alabaster"
+config.color_scheme = "AtomOneLight"
+-- config.color_scheme = "farmhouse-light"
 
+config.window_frame = {
+	font = require("wezterm").font("Hack Nerd Font"),
+	font_size = 12,
+	-- inactive_titlebar_bg = "#353535",
+	-- active_titlebar_bg = "#2b2042",
+}
+-- config.window_background_opacity = 0.99
 config.font = wezterm.font("Hack Nerd Font", { weight = "Regular" })
-config.font_size = 18
+config.font_size = 16
 config.send_composed_key_when_left_alt_is_pressed = true
 config.window_close_confirmation = "NeverPrompt"
 -- config.leader = { key = "s", mods = "CTRL" }
--- config.use_ime = false
+config.use_ime = false
 config.keys = {
 	{
 		--mods = "CMD|SHIFT",
@@ -82,26 +50,6 @@ config.keys = {
 		key = "w",
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
-	-- {
-	-- 	mods = "ALT",
-	-- 	key = "LeftArrow",
-	-- 	action = wezterm.action.ActivatePaneDirection("Left"),
-	-- },
-	-- {
-	-- 	mods = "ALT",
-	-- 	key = "RightArrow",
-	-- 	action = wezterm.action.ActivatePaneDirection("Right"),
-	-- },
-	-- {
-	-- 	mods = "ALT",
-	-- 	key = "DownArrow",
-	-- 	action = wezterm.action.ActivatePaneDirection("Down"),
-	-- },
-	-- {
-	-- 	mods = "ALT",
-	-- 	key = "UpArrow",
-	-- 	action = wezterm.action.ActivatePaneDirection("Up"),
-	-- },
 	{
 		mods = "ALT",
 		key = "h",

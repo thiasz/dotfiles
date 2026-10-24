@@ -1,12 +1,13 @@
 vim.pack.add({
 	-- colorschemes
-	"https://github.com/mcncl/alabaster.nvim",
-	"https://github.com/dracula/vim",
-	"https://github.com/guillermodotn/nvim-earthsong",
-	"https://github.com/miikanissi/modus-themes.nvim",
+	"https://github.com/dchinmay2/alabaster.nvim",
+	-- "https://github.com/mcncl/alabaster.nvim",
+	-- "https://github.com/dracula/vim",
+	-- "https://github.com/guillermodotn/nvim-earthsong",
+	-- "https://github.com/miikanissi/modus-themes.nvim",
 	"https://github.com/oskarnurm/koda.nvim",
-	"https://github.com/srcery-colors/srcery-vim",
-	"https://github.com/vague2k/vague.nvim",
+	-- "https://github.com/srcery-colors/srcery-vim",
+	-- "https://github.com/vague2k/vague.nvim",
 	-- lsp
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/b0o/SchemaStore.nvim",

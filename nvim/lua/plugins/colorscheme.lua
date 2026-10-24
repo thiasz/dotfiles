@@ -1,6 +1,6 @@
--- vim.cmd("colorscheme alabaster")
+vim.cmd("colorscheme alabaster")
 -- vim.cmd("colorscheme earthsong-mute")
-vim.cmd("colorscheme koda-glade")
+-- vim.cmd("colorscheme koda-glade")
 -- vim.cmd("colorscheme modus")
 -- vim.cmd("colorscheme modus_operandi")
 -- vim.cmd("colorscheme srcery")

@@ -1,18 +1,22 @@
--- require("vim._core.ui2").enable({})
-vim.g.mapleader = " " -- space leader key
+require("vim._core.ui2").enable({})
 -- vim.o.mouse = "" -- disable mouse in nvim
+vim.g.mapleader = " " -- space leader key
+vim.g.maplocalleader = " " -- space leader key
 
 vim.o.termguicolors = true -- enable 24-bit colors
 vim.o.updatetime = 200 -- save swap file with 200ms debouncing
+vim.o.swapfile = false -- disable swapfile
+vim.o.backup = false -- disable backup on
 vim.o.autoread = true -- auto update file if changed outside of nvim
 vim.o.undofile = true -- persistant undo history
 vim.o.number = true -- enable line numbers
 vim.o.relativenumber = true -- enable relative line numbers
 
-vim.o.completeopt = "menu,menuone,noselect,preview" -- omnicomplete options for popup menu
 vim.o.pumheight = 10 -- max height of completion menu
 vim.o.winborder = "rounded" -- rounded border
-vim.o.showmode = true -- disable showing mode below statusline
+vim.o.pumborder = vim.o.winborder
+vim.o.showmode = false -- disable showing mode below statusline
+-- vim.o.completeopt = "menu,menuone,noselect,preview" -- omnicomplete options for popup menu
 
 vim.o.cursorline = true -- enable cursor line
 vim.o.signcolumn = "yes" -- always show sign column
@@ -31,11 +35,30 @@ vim.o.scrolloff = 8 -- always keep 8 lines above/below cursor unless at start/en
 vim.o.splitbelow = true -- better splitting
 vim.o.splitright = true -- better splitting
 
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+
 vim.o.wrap = false -- disable wrapping
 vim.o.breakindent = true -- prevent line wrapping
 -- vim.opt.fillchars = { vert = " " } -- remove line divider between splits
 vim.opt.fillchars = { eob = " " }
-vim.o.laststatus = 3 -- global statusline
+-- vim.o.laststatus = 3 -- global statusline
+vim.o.cmdheight = 0 -- hide bottom cmdline
 
-vim.diagnostic.config({ virtual_text = true }) -- inline diagnostics
-vim.o.cmdheight = 1
+-- vim.diagnostic.config({ virtual_text = true }) -- inline diagnostics
+vim.diagnostic.config({
+	underline = true,
+	virtual_text = true,
+	update_in_insert = false,
+	severity_sort = true,
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = " ",
+			[vim.diagnostic.severity.WARN] = " ",
+			[vim.diagnostic.severity.HINT] = " ",
+			[vim.diagnostic.severity.INFO] = " ",
+		},
+	},
+})
